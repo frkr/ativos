@@ -1,0 +1,23 @@
+namespace ativos
+
+asset Ativo identified by ativoId {
+  o String ativoId
+  o String anexo
+  --> Participante proprietario optional
+}
+
+participant Participante identified by participanteId {
+  o String participanteId
+  o String descricao
+  o String anexo
+}
+
+transaction Movimento {
+  --> Ativo ativo
+  --> Participante participante
+  o String anexo
+}
+
+event Movimentacao {
+  --> Ativo ativo
+}
