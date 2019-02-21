@@ -1,0 +1,20 @@
+query selectMovimentosByAtivo {
+  description: "Selecionar todos os movimentos do Ativo"
+  statement:
+      SELECT ativos.Movimento
+          WHERE (ativo==_$ativo)
+}
+
+query selectMovimentosByAtivoAndParticipante {
+  description: "Selecionar todos os movimentos da Ativo por Participante"
+  statement:
+      SELECT ativos.Movimento
+          WHERE (ativo==_$ativo
+            AND participante==_$participante)
+}
+
+query selectAtivos {
+  description: "Selecionar Ativos"
+  statement:
+      SELECT ativos.Ativo
+}
